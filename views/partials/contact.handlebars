@@ -1,0 +1,34 @@
+<div style="display: flex; height: 100%;">
+	<div class="main-info">
+		<h2 id="title" style="text-align: center;">CONTACT</h2>
+		<form id="contact-form" method="post" action="/views/contact.php" role="form">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="form_name">First and Last Name:</label>
+						<input id="form_name name" type="text" name="name" class="form-control" placeholder="John Smith" required="required" data-error="Firstname is required.">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="form_lastname">Email:</label>
+						<input id="form_lastname email" type="text" name="email" class="form-control" placeholder="example@gmail.com" required="required" data-error="Lastname is required.">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="form_message">Message:</label>
+						<textarea id="form_message message" name="message" class="form-control" rows="4" data-error="Please,leave us a message."></textarea>
+					</div>
+				</div>
+					<div class="col-md-12" style="margin-bottom:20px;">
+					<input type="submit" name="submit" class="btn btn-success btn-send" value="Submit">
+					</div>
+			</div>
+		</form>
+	</div>
+</div>

@@ -58,5 +58,22 @@ $(document).ready(function() {
 });
 
 //=====================================================//
-//                        COLUMNS                      //
+//                         VIEWS                       //
 //=====================================================//
+$(document).keydown(function(e) {
+    if (e.keyCode === 37) {
+       // Previous
+       $(".carousel-control-prev").click();
+       return false;
+    }
+    if (e.keyCode === 39) {
+       // Next
+       $(".carousel-control-next").click();
+       return false;
+    }
+});
+$(document).ready(function(){
+    $('.carousel').carousel({
+        interval: false
+    })
+});
