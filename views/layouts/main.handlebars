@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+		<!-- Added a link to Style and font awesome-->
+		<link href="/assets/css/style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- Added a link to JavaScript-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/app.js"></script>
+		<!-- Added a link to Bootstrap-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container full-size">
+			<div class="row">
+				<button class="hamburger">&#9776;</button>
+				<div class="main-col col-lg-9 col-md-12">
+					{{{ body }}}
+				</div>
+				<div class="main-col col-lg-3 col-md-12 navigation">
+					{{> main-menu}}
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
