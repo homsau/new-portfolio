@@ -55,7 +55,7 @@ html a:hover {
 }
 .portfolio .main-info {
     margin: auto;
-    padding: 0px 40px;
+    padding: 40px 40px;
 }
 .contact .main-info {
     margin: auto;
@@ -182,11 +182,45 @@ html .main-menu a:hover {
 /*-----------------------------*/
 /*----------PORTFOLIO----------*/
 /*-----------------------------*/
-.portfolio #portfolio-image {
-    width: 500px;
+.switcher {
+    padding: 20px 0 0;
+    text-align: right;
 }
-.carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 70%;
-      margin: auto;
-  }
+.switcher img {
+    height: 40px;
+    padding: 10px 0;
+}
+.switcher #carousel {
+    padding-right: 10px;
+}
+.carousel,
+.carousel-inner > .carousel-item img {
+    width: 500px;
+    margin: auto;
+}
+.carousel-inner {
+    display: flex;
+    border-radius: 15px;
+}
+.carousel-item {
+    width: 500px !important;
+}
+.grid-item {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 10px;
+}
+.grid-item:first-child {
+    margin-left: 0;
+}
+.grid-item:last-child {
+    margin-right: 0;
+}
+.grid-item img {
+    width: 100%;
+    border-radius: 15px;
+}
+.grid .portfolio-row {
+    display: flex;
+}

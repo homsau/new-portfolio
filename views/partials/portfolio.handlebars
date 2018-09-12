@@ -1,6 +1,10 @@
 <div style="display: flex; height: 100%;">
 	<div class="main-info">
 		<h2 id="title" style="text-align: center;">PORTFOLIO</h2>
+		<div class="switcher">
+			<a id="carousel" href="#"><img src="/assets/img/carousel-icon.png" alt="carousel-icon"></a>
+			<a id="grid" href="#"><img src="/assets/img/grid-icon.png" alt="grid-icon"></a>
+		</div>
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 
 		<!-- Indicators -->
@@ -8,26 +12,39 @@
 			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 			<li data-target="#myCarousel" data-slide-to="1"></li>
 			<li data-target="#myCarousel" data-slide-to="2"></li>
+			<li data-target="#myCarousel" data-slide-to="3"></li>
+			<li data-target="#myCarousel" data-slide-to="4"></li>
+			<li data-target="#myCarousel" data-slide-to="5"></li>
 		</ul>
 		
 		<!-- The slideshow -->
 		<div class="carousel-inner">
-			<div class="carousel-item active">
-			<img src="/assets/img/project2-Playlisted.jpg" alt="Playliste" width="500" height="400">
+			<div id="portfolio-item" class="portfolio-item carousel-item active">
+				<img src="/assets/img/project2-Playlisted.jpg" alt="Playlisted">
 			</div>
-			<div class="carousel-item">
-			<img src="/assets/img/hw10-Bamazon.jpg" alt="Bamazon" width="500" height="400">
+			<div id="portfolio-item" class="portfolio-item carousel-item">
+				<img src="/assets/img/hw10-Bamazon.jpg" alt="Bamazon">
 			</div>
-			<div class="carousel-item">
-			<img src="/assets/img/hw11-Friend-Finder.jpg" alt="Friend Finder" width="500" height="400">
+			<div id="portfolio-item" class="portfolio-item carousel-item">
+				<img src="/assets/img/hw11-Friend-Finder.jpg" alt="Friend Finder">
+			</div>
+			<div id="portfolio-item" class="portfolio-item carousel-item">
+				<img src="/assets/img/hw12-Eat-Da-Burger.gif" alt="Eat-Da-Burger">
+			</div>
+			<div id="portfolio-item" class="portfolio-item carousel-item">
+				<img src="/assets/img/hw7-Train-Scheduler.jpg" alt="Train Scheduler">
+			</div>
+			<div id="portfolio-item" class="portfolio-item carousel-item">
+				<img src="/assets/img/hw8-LIRI-Bot.jpg" alt="LIRI Bot">
 			</div>
 		</div>
+		<div class="grid"></div>
 		
 		<!-- Left and right controls -->
-		<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+		<a class="carousel-control-prev carousel-controls" href="#myCarousel" data-slide="prev">
 			<span class="carousel-control-prev-icon"></span>
 		</a>
-		<a class="carousel-control-next" href="#myCarousel" data-slide="next">
+		<a class="carousel-control-next carousel-controls" href="#myCarousel" data-slide="next">
 			<span class="carousel-control-next-icon"></span>
 		</a>
 		</div>

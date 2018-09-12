@@ -60,6 +60,36 @@ $(document).ready(function() {
 //=====================================================//
 //                         VIEWS                       //
 //=====================================================//
+$(document).ready(function() {
+    var portfolioRows;
+    $(".switcher #grid").click(function() {
+        $(".portfolio-item").each(function() {
+            $(this).removeClass("carousel-item");
+            $(this).addClass("grid-item");
+            $(".grid").html($(".portfolio-item"));
+        });
+        portfolioRows = $(".portfolio-item");
+        for(var i = 0; i < portfolioRows.length; i+=3) {
+            portfolioRows.slice(i, i+3).wrapAll("<div class='portfolio-row'></div>");
+        }
+        $("#myCarousel").removeClass("carousel");
+        $(".carousel-controls").css("display","none");
+        $(".carousel-indicators").css("display","none");
+    });
+    $(".switcher #carousel").click(function() {
+        $(".portfolio-item").each(function() {
+            $(this).removeClass("grid-item");
+            $(this).addClass("carousel-item");
+            $(".carousel-inner").prepend($(".portfolio-item"));
+        });
+        $("#myCarousel").addClass("carousel");
+        $(".carousel-controls").css("display","flex");
+        $(".carousel-indicators").css("display","flex");
+    });
+});
+
+
+
 $(document).keydown(function(e) {
     if (e.keyCode === 37) {
        // Previous
@@ -72,14 +102,8 @@ $(document).keydown(function(e) {
        return false;
     }
 });
-$(document).ready(function(){
-    $('.carousel').carousel({
+$(document).ready(function() {
+    $('.carousel').carousel( {
         interval: false
     })
-    $("#myCarousel").swiperight(function() {
-       $(this).carousel('prev');
-     });
-    $("#myCarousel").swipeleft(function() {
-       $(this).carousel('next');
-    });
  });
