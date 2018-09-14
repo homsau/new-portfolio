@@ -7,12 +7,21 @@ $(document).ready(function() {
     });
     $(window).resize(function() {
         if($(window).width() > 991) {
-            $('.navigation').show();
+            $('.navigation').show().removeClass("open");
         } else {
             $('.navigation').hide();
         }
     }).resize();
 
+    $(".pages").click(function() {
+        if($(".navigation").hasClass("open")) {
+            $(".navigation").animate({width: "toggle"}, {duration: 500});
+            $(".navigation").removeClass("open");
+        }
+    });
+    $(".navigation").click(function(event){
+          event.stopPropagation();
+    });
     // CLOSE MENU WITH ESCAPE KEY //
     $(document).keydown(function(e) { 
         if (e.keyCode == 27 && ($(".navigation").hasClass("open"))) { 
@@ -61,17 +70,33 @@ $(document).ready(function() {
 //                         VIEWS                       //
 //=====================================================//
 $(document).ready(function() {
-    var portfolioRows;
+    var pageHeight;
+    $(window).resize(function() {
+        pageHeight = $("body").height();
+        $(".full-size").height(pageHeight);
+        console.log(pageHeight);
+    }).resize();
+});
+$(document).ready(function() {
     $(".switcher #grid").click(function() {
         $(".portfolio-item").each(function() {
             $(this).removeClass("carousel-item");
             $(this).addClass("grid-item");
             $(".grid").html($(".portfolio-item"));
         });
-        portfolioRows = $(".portfolio-item");
-        for(var i = 0; i < portfolioRows.length; i+=3) {
-            portfolioRows.slice(i, i+3).wrapAll("<div class='portfolio-row'></div>");
-        }
+        $(window).ready(function() {
+            const portfolioRows = $(".portfolio-item");
+            if($(window).width() > 767) {
+                for(var i = 0; i < portfolioRows.length; i += 3) {
+                    portfolioRows.slice(i, i + 3).wrapAll("<div class='portfolio-row'></div>");
+                }
+            } else {
+                for(var i = 0; i < portfolioRows.length; i += 2) {
+                    portfolioRows.slice(i, i + 2).wrapAll("<div class='portfolio-row'></div>");
+                }
+            }
+        }).resize();
+        
         $("#myCarousel").removeClass("carousel");
         $(".carousel-controls").css("display","none");
         $(".carousel-indicators").css("display","none");
@@ -89,21 +114,37 @@ $(document).ready(function() {
 });
 
 
-
+/* change carousel item with arrow keys */
+/* close any open modals */
 $(document).keydown(function(e) {
     if (e.keyCode === 37) {
        // Previous
        $(".carousel-control-prev").click();
+       $(".modal").modal("hide");
        return false;
     }
     if (e.keyCode === 39) {
        // Next
        $(".carousel-control-next").click();
+       $(".modal").modal("hide");
        return false;
     }
 });
 $(document).ready(function() {
     $('.carousel').carousel( {
         interval: false
-    })
- });
+    });
+
+    /* side portfolio items 
+    $(".carousel-inner .carousel-item").each(function () {
+        var next = $(this).next();
+        if (!next.length) {
+            next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+
+        if (next.next().length > 0) {
+            next.next().children(':first-child').clone().prependTo($(this));
+        }
+    });*/
+});
