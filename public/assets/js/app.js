@@ -79,24 +79,30 @@ $(document).ready(function() {
 });
 $(document).ready(function() {
     $(".switcher #grid").click(function() {
-        $(".portfolio-item").each(function() {
-            $(this).removeClass("carousel-item");
-            $(this).addClass("grid-item");
-            $(".grid").html($(".portfolio-item"));
-        });
-        $(window).ready(function() {
+        $(window).resize(function() {
+            $(".portfolio-item").each(function() {
+                $(this).removeClass("carousel-item");
+                $(this).addClass("grid-item");
+                $(".grid").html($(".portfolio-item"));
+            });
             const portfolioRows = $(".portfolio-item");
             if($(window).width() > 767) {
                 for(var i = 0; i < portfolioRows.length; i += 3) {
                     portfolioRows.slice(i, i + 3).wrapAll("<div class='portfolio-row'></div>");
+                    $(".grid-item").css("min-width", "calc(50% - 10px) !important;")
                 }
-            } else {
+            } else if ($(window).width() < 768) {
                 for(var i = 0; i < portfolioRows.length; i += 2) {
                     portfolioRows.slice(i, i + 2).wrapAll("<div class='portfolio-row'></div>");
+                    $(".grid-item").css("min-width", "calc(50% - 10px) !important;")
+                }
+            } else if ($(window).width() < 576) {
+                for(var i = 0; i < portfolioRows.length; i += 1) {
+                    portfolioRows.slice(i, i + 1).wrapAll("<div class='portfolio-row'></div>");
+                    $(".grid-item").css("min-width","100%");
                 }
             }
         }).resize();
-        
         $("#myCarousel").removeClass("carousel");
         $(".carousel-controls").css("display","none");
         $(".carousel-indicators").css("display","none");
