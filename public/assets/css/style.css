@@ -69,12 +69,12 @@ html a:hover {
 /*-----------------------------*/
 /*----------MAIN MENU----------*/
 /*-----------------------------*/
-.pages:not(.home) {
+.pages:not(.portfolio) {
     display: none;
 }
 .hamburger {
     display: none;
-    z-index: 1;
+    z-index: 16;
     text-shadow: 1.5px 1.5px 2px #fff;
 }
 .navigation {
@@ -85,6 +85,7 @@ html a:hover {
     background-color: rgba(255,255,255,1) !important;
     width: 350px !important;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 15;
 }
 .fa-twitter {
     color: #55ACEE !important;
@@ -201,7 +202,6 @@ html .main-menu a:hover {
     box-shadow: 0px 2px 4px 0.5px rgba(0,0,0,0.3);
 }
 .carousel {
-    max-width: 650px;
     margin: auto;
 }
 .carousel-inner > .carousel-item img {
@@ -230,8 +230,11 @@ html .main-menu a:hover {
 .grid-item {
     display: block !important;
     height: auto !important;
-    margin: 10px;
+    margin: 0 20px 20px;
     width: calc(50% - 10px) !important;
+}
+.grid-item.mobile-size {
+    width: 100% !important;
 }
 .grid-item:first-child {
     margin-left: 0;
@@ -255,7 +258,7 @@ html .main-menu a:hover {
 .modal-button.btn-primary {
     background-color: #000;
     border-color: transparent !important;
-    border-radius: 5px;
+    border-radius: 15px;
     margin: 20px 0;
     -webkit-transition: all 300ms;
     transition: all 300ms;
@@ -286,6 +289,13 @@ html .main-menu a:hover {
     width: 100%;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
+}
+@media (max-width: 991px) {
+    .modal-col img {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 0;
+    }
 }
 .modal-col-desc {
     padding: 20px !important;
@@ -320,3 +330,22 @@ html .main-menu a:hover {
     border-top: none !important;
     padding-top: 0 !important;
 }
+
+/*-----------------------------*/
+/*-------PORTFOLIO- VIEWS------*/
+/*-----------------------------*/
+/*@media (min-width: 767px) {
+    .grid-item {
+        min-width: calc(50% - 10px);
+    }
+}
+@media (min-width: 577px) {
+    .grid-item {
+        min-width: calc(50% - 10px);
+    }
+}
+@media (max-width: 576px) {
+    .grid-item {
+        min-width: 100%;
+    }
+}*/
