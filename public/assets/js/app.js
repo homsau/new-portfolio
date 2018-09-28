@@ -75,6 +75,12 @@ $(document).ready(function() {
 //=====================================================//
 //                         VIEWS                       //
 //=====================================================//
+$(document).on("click", "#portfolio", function() {
+    var pageHeight = $("body").height();
+    $(".full-size").height(pageHeight);
+    var carouselHeight = $("#portfolio-item .carousel-img").height();
+    $(".carousel-controls").height(carouselHeight);
+});
 $(document).ready(function() {
     var pageHeight;
     var carouselHeight;
@@ -85,6 +91,7 @@ $(document).ready(function() {
         $(".carousel-controls").height(carouselHeight);
     }).resize();
 });
+
 $(document).ready(function() {
     $(".switcher #grid").click(function() {
         $(window).resize(function() {
@@ -94,8 +101,8 @@ $(document).ready(function() {
                 $(".grid").html($(".portfolio-item"));
             
                 const portfolioRows = $(".portfolio-item");
-                const portfolioItems = portfolioRows.length;
-                console.log(portfolioItems);
+                // const portfolioItems = portfolioRows.length;
+                // console.log(portfolioItems);
                 if($(window).width() > 767) {
                     for(var i = 0; i < portfolioRows.length; i += 3) {
                         portfolioRows.slice(i, i + 3).wrapAll("<div class='portfolio-row'></div>");
@@ -129,10 +136,10 @@ $(document).ready(function() {
                     }
                 }
             });
+            $("#myCarousel").removeClass("carousel");
+            $(".carousel-controls").css("display","none");
+            $(".carousel-indicators").css("display","none");
         }).resize();
-        $("#myCarousel").removeClass("carousel");
-        $(".carousel-controls").css("display","none");
-        $(".carousel-indicators").css("display","none");
     });
     $(".switcher #carousel").click(function() {
         $(".portfolio-item").each(function() {
