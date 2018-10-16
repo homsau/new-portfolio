@@ -39,6 +39,7 @@ html a:hover {
 .home .main-info ul {
     padding: 0;
     list-style-type: none;
+    text-align: center;
 }
 .about-me .main-info {
     margin: auto;
