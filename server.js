@@ -41,9 +41,9 @@ app.post('/send', function(req, res) {
   });
 
   var mailOptions = {
-    from: 'James Portfolio <james.cowart.portfolio@gmail.com>',
+    from: 'James Cowart - Full Stack Flex Web Development <james.cowart.portfolio@gmail.com>',
     to: 'james.p.cowart@gmail.com',
-    subject: 'test subject',
+    subject: 'Contact Me',
     html: 'Name: ' + req.body.name + '</br>' +
           'Email: ' + req.body.email + '</br>' +
           'Message: ' + req.body.message

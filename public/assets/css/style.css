@@ -373,6 +373,10 @@ html .main-menu a:hover {
 .contact-submit:focus {
     box-shadow: none !important;
 }
+.form-control:focus {
+    border-color: #9cb9a9!important;
+    box-shadow: 0 0 0 0.2rem rgba(48,93,68,.25) !important;
+}
 
 /*-----------------------------*/
 /*-------PORTFOLIO- VIEWS------*/
@@ -392,3 +396,10 @@ html .main-menu a:hover {
         min-width: 100%;
     }
 }*/
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #abd4bd inset !important;
+}
