@@ -103,6 +103,14 @@ html a:hover {
     color: #305d44 !important;
 }
 @media (max-width: 991px) {
+    .main-info h2 {
+        font-size: 3rem !important;
+    }
+    .main-info {
+        width: 80%;
+        max-width: 100%;
+        font-size: 1.5em
+    }
     .sidebar {
         max-width: 100% !important;
         width: 100% !important;
@@ -128,12 +136,22 @@ html a:hover {
         background: none;
         position: fixed;
         top: 0;
-        right: 0;
+        left: 0;
         padding: 5px 15px 0px 15px;
         border: none;
-        font-size: 24px;
+        font-size: 100px;
         cursor: pointer;
         outline: none !important;
+    }
+}
+@media (max-width: 767px) {
+    .main-info h2 {
+        font-size: 2rem !important;
+    }
+    .main-info {
+        width: 80%;
+        max-width: 100%;
+        font-size: 1.25em
     }
 }
 .main-menu {
