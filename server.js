@@ -44,7 +44,8 @@ app.post('/send', function(req, res) {
     from: 'James Cowart - Full Stack Flex Web Development <james.cowart.portfolio@gmail.com>',
     to: 'james.p.cowart@gmail.com',
     subject: 'Contact Me',
-    html: 'Name: ' + req.body.name + '</br>' +
+    html: req.body.name + ' is trying to reach you!' + '</br>' +
+          'Name: ' + req.body.name + '</br>' +
           'Email: ' + req.body.email + '</br>' +
           'Message: ' + req.body.message
   };
@@ -56,7 +57,7 @@ app.post('/send', function(req, res) {
     } else {
       console.log(info.response);
       // alert('Thank you for contacting me! I will get back to you as soon as I can.');
-      // res.redirect('/');
+      res.redirect('/');
     }
   })
 });
