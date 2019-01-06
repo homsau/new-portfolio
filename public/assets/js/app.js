@@ -6,7 +6,7 @@ $(document).ready(function() {
         if(!$(".navigation").hasClass("open")) {
             $(".navigation").animate({width: "toggle"}, {duration: 500});
             $(".navigation").addClass("open");
-        } else {
+        } else if($(".navigation").hasClass("open")) {
             $(".navigation").animate({width: "toggle"}, {duration: 500});
             $(".navigation").removeClass("open");
         }
@@ -34,6 +34,12 @@ $(document).ready(function() {
             $(".navigation").animate({width: "toggle"}, {duration: 500});
             $(".navigation").removeClass("open");
         }
+    });
+    $(document).ready(function() {
+        $('.nav li a').click(function() {
+            $(".navigation").animate({width: "toggle"}, {duration: 500});
+            $(".navigation").removeClass("open");
+        });
     });
 });
 
@@ -91,11 +97,6 @@ $(document).ready(function() {
         $(".carousel-controls").height('400px');
     }).resize();
 });
-
-// $if($(window).width() < 991) {
-//     (".nav a").click(function() {
-//     $(".navigation").removeClass("open");
-// });
 
 $(document).ready(function() {
     $(".switcher #grid").click(function() {
