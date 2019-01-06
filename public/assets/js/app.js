@@ -35,6 +35,10 @@ $(document).ready(function() {
             $(".navigation").removeClass("open");
         }
     });
+    $('.nav li').click(function() {
+        $(".navigation").animate({width: "toggle"}, {duration: 500});
+        $(".navigation").removeClass("open");
+    });
 });
 
 $(document).ready(function() {

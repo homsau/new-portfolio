@@ -109,7 +109,7 @@ html a:hover {
     .main-info {
         width: 80%;
         max-width: 100%;
-        font-size: 1.5em
+        font-size: 1.25em
     }
     .sidebar {
         max-width: 100% !important;
@@ -137,9 +137,9 @@ html a:hover {
         position: fixed;
         top: 0;
         left: 0;
-        padding: 5px 15px 0px 15px;
+        padding: 10px 15px 0px 20px;
         border: none;
-        font-size: 100px;
+        font-size: 50px;
         cursor: pointer;
         outline: none !important;
     }
@@ -151,7 +151,7 @@ html a:hover {
     .main-info {
         width: 80%;
         max-width: 100%;
-        font-size: 1.25em
+        font-size: 1em
     }
 }
 .main-menu {
@@ -186,6 +186,10 @@ html .main-menu a:hover {
     padding: 1em 0 1.333em;
     font-size: 1.5em;
 }
+.social-icons a {
+    font-size: 3rem !important;
+    padding: 0 10px;
+}
 .main-menu .nav {
     display: block;
     text-align: center;
@@ -194,7 +198,8 @@ html .main-menu a:hover {
 }
 .main-menu .nav li {
     text-transform: uppercase;
-    padding: 0 0 1em;
+    padding: 0 0 0em;
+    font-size: 2.5em !important
 }
 .main-menu .nav i {
     padding-right: 10px;
