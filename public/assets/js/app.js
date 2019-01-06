@@ -88,13 +88,13 @@ $(document).ready(function() {
         pageHeight = $("body").height();
         $(".full-size").height(pageHeight);
         carouselHeight = $("#portfolio-item .carousel-img").height();
-        $(".carousel-controls").height(carouselHeight);
+        $(".carousel-controls").height('400px');
     }).resize();
 });
 
 $(document).ready(function() {
     $(".switcher #grid").click(function() {
-        $(window).resize(function() {
+        // $(window).resize(function() {
             $(".portfolio-item").each(function() {
                 $(this).removeClass("carousel-item");
                 $(this).addClass("grid-item");
@@ -139,7 +139,7 @@ $(document).ready(function() {
             $("#myCarousel").removeClass("carousel");
             $(".carousel-controls").css("display","none");
             $(".carousel-indicators").css("display","none");
-        }).resize();
+        // }).resize();
     });
     $(".switcher #carousel").click(function() {
         $(".portfolio-item").each(function() {
