@@ -35,10 +35,6 @@ $(document).ready(function() {
             $(".navigation").removeClass("open");
         }
     });
-    $('.nav li').click(function() {
-        $(".navigation").animate({width: "toggle"}, {duration: 500});
-        $(".navigation").removeClass("open");
-    });
 });
 
 $(document).ready(function() {
@@ -95,6 +91,11 @@ $(document).ready(function() {
         $(".carousel-controls").height('400px');
     }).resize();
 });
+
+// $if($(window).width() < 991) {
+//     (".nav a").click(function() {
+//     $(".navigation").removeClass("open");
+// });
 
 $(document).ready(function() {
     $(".switcher #grid").click(function() {
