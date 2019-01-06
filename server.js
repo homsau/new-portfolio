@@ -29,7 +29,7 @@ app.use("/", routes);
 app.post('/send', function(req, res) {
   console.log(req.body.message);
   console.log(req.body.email);
-  var transporter = nodemailer.createTransport({
+  var transporter = nodemailer.createTransport("SMTP", {
     service: 'Gmail',
     auth: {
       user: 'james.cowart.portfolio@gmail.com',
