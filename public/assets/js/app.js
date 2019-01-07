@@ -4,42 +4,42 @@
 $(document).ready(function() {
     $(".hamburger" ).click(function() {
         if(!$(".navigation").hasClass("open")) {
-            $(".navigation").animate({width: "toggle"}, {duration: 500});
-            $(".navigation").addClass("open");
+            $(".navigation").animate({width: "toggle"}, {duration: 500}).addClass("open");
         } else if($(".navigation").hasClass("open")) {
-            $(".navigation").animate({width: "toggle"}, {duration: 500});
-            $(".navigation").removeClass("open");
+            $(".navigation").animate({width: "toggle"}, {duration: 500}).removeClass("open");
         }
     });
     $(window).resize(function() {
         if($(window).width() > 991) {
             $('.navigation').show().removeClass("open");
+            $('.navigation').show().removeClass("mobile");
         } else {
-            $('.navigation').hide();
+            $('.navigation').hide().addClass("mobile");
         }
     }).resize();
 
-    $(".pages").click(function() {
-        if($(".navigation").hasClass("open")) {
-            $(".navigation").animate({width: "toggle"}, {duration: 500});
-            $(".navigation").removeClass("open");
-        }
-    });
+    // $(".pages").click(function() {
+    //     if($(".navigation").hasClass("open")) {
+    //         $(".navigation").animate({width: "toggle"}, {duration: 500});
+    //         $(".navigation").removeClass("open");
+    //     }
+    // });
     $(".navigation").click(function(event){
           event.stopPropagation();
     });
     // CLOSE MENU WITH ESCAPE KEY //
     $(document).keydown(function(e) { 
         if (e.keyCode == 27 && ($(".navigation").hasClass("open"))) { 
-            $(".navigation").animate({width: "toggle"}, {duration: 500});
-            $(".navigation").removeClass("open");
+            $(".navigation").animate({width: "toggle"}, {duration: 500}).removeClass("open");
         }
     });
     $(document).ready(function() {
-        $('.nav li a').click(function() {
-            $(".navigation").animate({width: "toggle"}, {duration: 500});
-            $(".navigation").removeClass("open");
-        });
+        // if($(window).width() > 991) {
+            $('.mobile > .main-menu > .nav > li > a').click(function() {
+                $(".mobile.navigation").animate({width: "toggle"}, {duration: 500}).removeClass("open");
+                console.log("new code");
+            });
+        // }
     });
 });
 
