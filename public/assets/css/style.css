@@ -32,9 +32,22 @@ html a:hover {
     margin: auto;
     color: #fff;
     padding: 40px;
-    border-radius: 15px;
+    border-radius: 10px;
     background-color: rgba(0,0,0,0.5);
     box-shadow: 0px 12px 18px -6px rgba(0,0,0,0.3);
+}
+.main-info #bio p:first-child, .main-info #bio p:last-child {
+    font-weight: bold;
+    padding-left: 0;
+}
+.main-info #bio p {
+    padding: 0 0 0 40px;
+}
+.main-info #bio p:first-child {
+    margin-bottom: 10px;
+}
+.main-info #bio p:last-child {
+    margin-top: -20px;
 }
 .home .main-info ul {
     padding: 0;
@@ -169,7 +182,7 @@ html .main-menu a:hover {
     margin: 0;
 }
 .main-menu #bio-headshot {
-    border-radius: 15px;
+    border-radius: 10px;
     width: 200px;
     box-shadow: 0px 12px 18px -6px rgba(0,0,0,0.3);
     margin: 0 0 20px;
@@ -225,18 +238,27 @@ html .main-menu a:hover {
 .switcher #carousel {
     padding-right: 10px;
 }
+.carousel {
+    max-width: 500px;
+}
 .carousel-controls span {
     box-shadow: 0px 12px 8px -8px rgba(0,0,0,0.3);
 }
+.carousel-control-next, .carousel-control-prev {
+    opacity: 1 !important;
+}
 .carousel-indicators {
-    bottom: 78px !important;
+    bottom: 77px !important;
     background: rgba(255,255,255,0.5);
     width: 100%;
     display: inline-flex;
-    margin: 0 !important;
+    margin: 0 auto !important;
     padding: 20px 0;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    /* border: 1px solid #abd4bd; */
+    border-top: none;
+    max-width: 500px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 .carousel-indicators .active {
     background: #305d44 !important;
@@ -245,9 +267,16 @@ html .main-menu a:hover {
     /* box-shadow: 0px 2px 4px 0.5px rgba(0,0,0,0.3); */
     width: 15px !important;
     height: 15px !important;
-    background: #abd4bd !important;
-    border: 2px solid;
-    border-radius: 15px !important;
+    background: rgba(255,255,255,0.75) !important;
+    border: 1px solid;
+    border-radius: 10px !important;
+}
+@media (max-width: 767px) {
+    .carousel-indicators li {
+        height: 7.5px !important;
+        width: 7.5px !important;
+        margin: 2px !important;
+    }
 }
 .portfolio-item.carousel-item.empty {
     display: none;
@@ -263,10 +292,13 @@ html .main-menu a:hover {
     display: flex;
 }
 .carousel-item {
-    width: 500px !important;
+    max-width: 500px !important;
+}
+.carousel-item {
+    transition-property: opacity !important;
 }
 .carousel-img img {
-    border-radius: 15px;
+    border-radius: 10px;
 }
 .project-description:focus,
 .carousel-img:focus,
@@ -296,7 +328,7 @@ html .main-menu a:hover {
 
 .grid-item img {
     width: 100%;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 .grid .portfolio-row {
     display: flex;
@@ -309,14 +341,15 @@ html .main-menu a:hover {
 .modal-button.btn-primary {
     background-color: #000;
     border-color: transparent !important;
-    border-radius: 15px;
+    border-radius: 10px;
     margin: 20px 0;
     -webkit-transition: all 300ms;
     transition: all 300ms;
     font-weight: bold;
     text-transform: uppercase;
     min-width: 100px;
-    width: 50%;
+    width: 100%;
+    max-width: 300px;
 }
 .grid-item .modal-button.btn-primary {
     width: 100%;
@@ -337,7 +370,7 @@ html .main-menu a:hover {
     transition: all 300ms;
 }
 .modal-body .row {
-    border-radius: 15px;
+    border-radius: 10px;
 }
 .modal-col {
     padding: 0 !important;
@@ -374,7 +407,7 @@ html .main-menu a:hover {
     text-align: center;
 }
 .modal-content {
-    border-radius: 15px !important;
+    border-radius: 10px !important;
     padding: 0 40px;
 }
 .modal-header,

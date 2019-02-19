@@ -37,7 +37,7 @@ $(document).ready(function() {
         // if($(window).width() > 991) {
             $('.mobile > .main-menu > .nav > li > a').click(function() {
                 $(".mobile.navigation").animate({width: "toggle"}, {duration: 500}).removeClass("open");
-                console.log("new code");
+                // console.log("new code");
             });
         // }
     });
@@ -81,20 +81,30 @@ $(document).ready(function() {
 //=====================================================//
 //                         VIEWS                       //
 //=====================================================//
-$(document).on("click", "#portfolio", function() {
-    var pageHeight = $("body").height();
-    $(".full-size").height(pageHeight);
-    var carouselHeight = $("#portfolio-item .carousel-img").height();
-    $(".carousel-controls").height(carouselHeight);
-});
+// $(document).on("click", "#portfolio", function() {
+//     var pageHeight = $("body").height();
+//     $(".full-size").height(pageHeight);
+//     console.log(pageHeight);
+//     var carouselHeight = $("#portfolio-item .carousel-img").height();
+//     $(".carousel-controls").height(carouselHeight);
+// });
 $(document).ready(function() {
     var pageHeight;
     var carouselHeight;
+    if($(window).width() > 798) {
+        carouselHeight = $("#portfolio-item .carousel-img").height();
+        $(".carousel-controls span").height(400);
+        console.log('hi: ' + carouselHeight);
+
+    }
     $(window).resize(function() {
         pageHeight = $("body").height();
         $(".full-size").height(pageHeight);
         carouselHeight = $("#portfolio-item .carousel-img").height();
-        $(".carousel-controls").height('400px');
+        $(".carousel-controls span").height(carouselHeight);
+        console.log(carouselHeight);
+        // var testHeight = $('#portfolio-item img').height();
+        // console.log('test height bitch: ' + testHeight);
     }).resize();
 });
 
