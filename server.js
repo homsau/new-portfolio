@@ -1,3 +1,4 @@
+require('dotenv').config()
 var express = require("express");
 var bodyParser = require("body-parser");
 var nodemailer = require('nodemailer');
@@ -5,6 +6,9 @@ var nodemailer = require('nodemailer');
 var PORT = process.env.PORT || 8000;
 
 var app = express();
+
+var username = process.env.USERNAME;
+var password = process.env.PASSWORD;
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
@@ -29,11 +33,13 @@ app.use("/", routes);
 app.post('/send', function(req, res) {
   console.log(req.body.message);
   console.log(req.body.email);
+  console.log(username);
+  console.log(password);
   var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: 'james.cowart.portfolio@gmail.com',
-      pass: 'jpc-Portfolio'
+      user: username,
+      pass: password
     },
     tls: {
       rejectUnauthorized: false

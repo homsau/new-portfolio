@@ -94,15 +94,13 @@ $(document).ready(function() {
     if($(window).width() > 798) {
         carouselHeight = $("#portfolio-item .carousel-img").height();
         $(".carousel-controls span").height(400);
-        console.log('hi: ' + carouselHeight);
-
+        console.log('carousel height: ' + carouselHeight);
     }
     $(window).resize(function() {
         pageHeight = $("body").height();
         $(".full-size").height(pageHeight);
         carouselHeight = $("#portfolio-item .carousel-img").height();
         $(".carousel-controls span").height(carouselHeight);
-        console.log(carouselHeight);
         // var testHeight = $('#portfolio-item img').height();
         // console.log('test height bitch: ' + testHeight);
     }).resize();
