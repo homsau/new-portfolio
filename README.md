@@ -1,4 +1,4 @@
-# Eat-Da-Burger
+# Portfolio
 ---
 ## Description
 *Eat-Da-Burger* is an app with MySQL, Node, Express, Handlebars and a homemade ORM.

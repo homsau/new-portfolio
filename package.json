@@ -1,26 +1,27 @@
 {
-  "name": "eat-da-burger",
+  "name": "new-portfolio",
   "version": "1.0.0",
-  "description": "Eat-Da-Burger",
+  "description": "Portfolio",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/homsau/Eat-Da-Burger.git"
+    "url": "git+https://github.com/homsau/New-Portfolio.git"
   },
   "author": "James",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/homsau/Eat-Da-Burger/issues"
+    "url": "https://github.com/homsau/New-Portfolio/issues"
   },
-  "homepage": "https://github.com/homsau/Eat-Da-Burger#readme",
+  "homepage": "https://github.com/homsau/New-Portfolio#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
+    "google-recaptcha": "^1.1.0",
     "method-override": "^3.0.0",
     "mysql": "^2.16.0",
     "nodemailer": "^4.7.0",

@@ -32,11 +32,31 @@ var routes = require("./controllers/app_controller.js");
 
 app.use("/", routes);
 
-app.post('/send', function(req, res) {
+app.post('/submit',function(req,res) {
+  console.log(secretKey);
+  if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
+    return res.json({"responseCode" : 1,"responseDesc" : "Please select captcha"});
+  }
+  // req.connection.remoteAddress will provide IP address of connected user.
+  var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+  // Hitting GET request to the URL, Google will respond with success or error scenario.
+  request(verificationUrl,function(error,response,body) {
+    body = JSON.parse(body);
+    // Success will be true or false depending upon captcha validation.
+    if(body.success !== undefined && !body.success) {
+      return res.json({"responseCode" : 1,"responseDesc" : "Failed captcha verification"});
+    }
+    res.json({"responseCode" : 0,"responseDesc" : "Sucess"});
+  });
+});
+
+/*app.post('/send', function(req, res) {
   console.log(req.body.message);
   console.log(req.body.email);
-  console.log(siteKey);
-  console.log(secretKey);
+  // console.log(username);
+  // console.log(password);
+  // console.log(siteKey);
+  // console.log(secretKey);
   var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
@@ -68,7 +88,7 @@ app.post('/send', function(req, res) {
       res.redirect('/');
     }
   })
-});
+});*/
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {

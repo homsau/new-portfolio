@@ -25,10 +25,27 @@
 						<textarea id="form_message message" name="message" placeholder="Send me a message!" class="form-control" rows="4" data-error="Send me a message!"></textarea>
 					</div>
 				</div>
-					<div class="col-md-12" style="margin-bottom:20px;">
+				<div class="col-md-12" style="margin-bottom:20px;">
+					<div class="g-recaptcha" data-sitekey="6Lf9nZIUAAAAANVZwNcqdN2MQs6Fn3oO4-oer23R"></div><br>
 					<input type="submit" name="submit" class="contact-submit btn btn-success btn-send" value="Submit">
-					</div>
+				</div>
 			</div>
 		</form>
 	</div>
 </div>
+<script>
+    $(document).ready(function() {
+		$('#contact-form').submit(function() {
+			$(this).ajaxSubmit({
+				error: function(xhr) {
+					status('Error: ' + xhr.status);
+				},
+				success: function(response) {
+					console.log(response);
+				}
+			});
+			//Very important line, it disable the page refresh.
+			return false;
+		});
+    });
+</script>
