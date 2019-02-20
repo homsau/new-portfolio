@@ -32,8 +32,7 @@ var routes = require("./controllers/app_controller.js");
 
 app.use("/", routes);
 
-app.post('/submit',function(req,res) {
-  console.log(secretKey);
+/*app.post('/submit',function(req,res) {
   if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
     return res.json({"responseCode" : 1,"responseDesc" : "Please select captcha"});
   }
@@ -48,9 +47,9 @@ app.post('/submit',function(req,res) {
     }
     res.json({"responseCode" : 0,"responseDesc" : "Sucess"});
   });
-});
+});*/
 
-/*app.post('/send', function(req, res) {
+app.post('/send', function(req, res) {
   console.log(req.body.message);
   console.log(req.body.email);
   // console.log(username);
@@ -88,7 +87,7 @@ app.post('/submit',function(req,res) {
       res.redirect('/');
     }
   })
-});*/
+});
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
