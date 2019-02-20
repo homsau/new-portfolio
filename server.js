@@ -3,12 +3,14 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var nodemailer = require('nodemailer');
 
-var PORT = process.env.PORT || 8000;
+var PORT = process.env.PORT || 8080;
 
 var app = express();
 
 var username = process.env.USERNAME;
 var password = process.env.PASSWORD;
+var siteKey = process.env.SITE_KEY;
+var secretKey = process.env.SECRET_KEY
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
@@ -33,8 +35,8 @@ app.use("/", routes);
 app.post('/send', function(req, res) {
   console.log(req.body.message);
   console.log(req.body.email);
-  console.log(username);
-  console.log(password);
+  console.log(siteKey);
+  console.log(secretKey);
   var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
@@ -47,7 +49,7 @@ app.post('/send', function(req, res) {
   });
 
   var mailOptions = {
-    from: 'James Cowart - Full Stack Flex Web Development <james.p.cowart@gmail.com>',
+    from: '"Portfolio Contact 🤘🏻🔥" <james.cowart.portfolio@gmail.com>',
     to: 'james.p.cowart@gmail.com',
     subject: 'Contact Me',
     html: req.body.name + ' is trying to reach you!' + '</br>' +
