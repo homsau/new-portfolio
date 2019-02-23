@@ -2,6 +2,7 @@ require('dotenv').config()
 var express = require("express");
 var bodyParser = require("body-parser");
 var nodemailer = require('nodemailer');
+var request = require('request')
 
 var PORT = process.env.PORT || 8080;
 
@@ -9,7 +10,7 @@ var app = express();
 
 var username = process.env.USERNAME;
 var password = process.env.PASSWORD;
-var siteKey = process.env.SITE_KEY;
+// var siteKey = process.env.SITE_KEY;
 var secretKey = process.env.SECRET_KEY
 
 // Serve static content for the app from the "public" directory in the application directory.
@@ -32,61 +33,52 @@ var routes = require("./controllers/app_controller.js");
 
 app.use("/", routes);
 
-/*app.post('/submit',function(req,res) {
+app.post('/submit',function(req,res,e) {
   if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
-    return res.json({"responseCode" : 1,"responseDesc" : "Please select captcha"});
+    console.log("Beep Boop: You are a robot");
+    return;
+  } else {
+    var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+    // Hitting GET request to the URL, Google will respond with success or error scenario.
+    request(verificationUrl,function(error,response,body) {
+      body = JSON.parse(body);
+      // Success will be true or false depending upon captcha validation.
+      if(body.success !== undefined && !body.success) {
+        console.log("second nah");
+      } else {
+        var transporter = nodemailer.createTransport({
+          service: 'Gmail',
+          auth: {
+            user: username,
+            pass: password
+          },
+          tls: {
+            rejectUnauthorized: false
+          }
+        });
+        var mailOptions = {
+          from: '"Portfolio Contact 🤘🏻🔥" <james.cowart.portfolio@gmail.com>',
+          to: 'james.p.cowart@gmail.com',
+          subject: 'Contact Me',
+          html: req.body.name + ' is trying to reach you!' + '</br>' +
+            'Name: ' + req.body.name + '</br>' +
+            'Email: ' + req.body.email + '</br>' +
+            'Message: ' + req.body.message
+        };
+        transporter.sendMail(mailOptions, function(error, info) {
+          if(error){
+            console.log(error);
+            console.log('oops');
+          } else {
+            console.log(info.response);
+            console.log('hooray');
+            
+            res.redirect('/');
+          }
+        })
+      }
+    });
   }
-  // req.connection.remoteAddress will provide IP address of connected user.
-  var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
-  // Hitting GET request to the URL, Google will respond with success or error scenario.
-  request(verificationUrl,function(error,response,body) {
-    body = JSON.parse(body);
-    // Success will be true or false depending upon captcha validation.
-    if(body.success !== undefined && !body.success) {
-      return res.json({"responseCode" : 1,"responseDesc" : "Failed captcha verification"});
-    }
-    res.json({"responseCode" : 0,"responseDesc" : "Sucess"});
-  });
-});*/
-
-app.post('/send', function(req, res) {
-  console.log(req.body.message);
-  console.log(req.body.email);
-  // console.log(username);
-  // console.log(password);
-  // console.log(siteKey);
-  // console.log(secretKey);
-  var transporter = nodemailer.createTransport({
-    service: 'Gmail',
-    auth: {
-      user: username,
-      pass: password
-    },
-    tls: {
-      rejectUnauthorized: false
-    }
-  });
-
-  var mailOptions = {
-    from: '"Portfolio Contact 🤘🏻🔥" <james.cowart.portfolio@gmail.com>',
-    to: 'james.p.cowart@gmail.com',
-    subject: 'Contact Me',
-    html: req.body.name + ' is trying to reach you!' + '</br>' +
-          'Name: ' + req.body.name + '</br>' +
-          'Email: ' + req.body.email + '</br>' +
-          'Message: ' + req.body.message
-  };
-
-  transporter.sendMail(mailOptions, function(error, info){
-    if(error){
-      console.log(error);
-      res.redirect('/');
-    } else {
-      console.log(info.response);
-      // alert('Thank you for contacting me! I will get back to you as soon as I can.');
-      res.redirect('/');
-    }
-  })
 });
 
 // Start our server so that it can begin listening to client requests.

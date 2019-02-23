@@ -21,14 +21,14 @@ html a:hover {
 .pages {
     height: 100%;
 }
-.home {
+.home, .thank-you {
     background-image: url("../img/main-bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
 }
-.home .main-info {
+.home .main-info, .thank-you .main-info {
     margin: auto;
     color: #fff;
     padding: 40px;
@@ -49,7 +49,8 @@ html a:hover {
 .main-info #bio p:last-child {
     margin-top: -20px;
 }
-.home .main-info ul {
+.home .main-info ul,
+.thank-you .main-info ul {
     padding: 0;
     list-style-type: none;
     text-align: center;

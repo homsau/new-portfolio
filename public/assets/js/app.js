@@ -37,7 +37,6 @@ $(document).ready(function() {
         // if($(window).width() > 991) {
             $('.mobile > .main-menu > .nav > li > a').click(function() {
                 $(".mobile.navigation").animate({width: "toggle"}, {duration: 500}).removeClass("open");
-                // console.log("new code");
             });
         // }
     });
@@ -74,6 +73,8 @@ $(document).ready(function() {
             $("#contact").addClass("active");
             $(".pages").slideUp(500);
             $(".contact").slideDown(500);
+            $("#contact-form input:not('.contact-submit')").val("");
+            $("#contact-form textarea").val("");
         }
     });
 });
@@ -108,7 +109,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $(".switcher #grid").click(function() {
-        // $(window).resize(function() {
+        $(window).resize(function() {
             $(".portfolio-item").each(function() {
                 $(this).removeClass("carousel-item");
                 $(this).addClass("grid-item");
@@ -153,7 +154,7 @@ $(document).ready(function() {
             $("#myCarousel").removeClass("carousel");
             $(".carousel-controls").css("display","none");
             $(".carousel-indicators").css("display","none");
-        // }).resize();
+        }).resize();
     });
     $(".switcher #carousel").click(function() {
         $(".portfolio-item").each(function() {
@@ -194,3 +195,24 @@ $(document).ready(function() {
 //                      RECAPTCHA                      //
 //=====================================================//
 
+$(document).ready(function() {
+    $('#contact-form').submit(function(req, res) {
+        $(this).ajaxSubmit({
+            error: function(xhr) {
+                status('Error: ' + xhr.status);
+            },
+            success: function(response) {
+                // on success remove active class from menu item
+                // slide to hidden thank you block
+                if ($("#contact").hasClass("active")) {
+                    $(".nav a").removeAttr("class");
+                    $(".pages").slideUp(500);
+                    $(".thank-you").slideDown(500);
+                    console.log('app.js');
+                }
+            }
+        });
+        // Very important line, it disable the page refresh.
+        return false;
+    });
+});
