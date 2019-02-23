@@ -198,8 +198,10 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#contact-form').submit(function(req, res) {
         $(this).ajaxSubmit({
-            error: function(xhr) {
-                status('Error: ' + xhr.status);
+            error: function(xhr,err) {
+                // status('Error: ' + xhr.status);
+                console.log(xhr);
+                console.log(err);
             },
             success: function(response) {
                 // on success remove active class from menu item
