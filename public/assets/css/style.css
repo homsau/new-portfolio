@@ -102,18 +102,18 @@ html a:hover {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     z-index: 15;
 }
-.fa-twitter {
+.fa-twitter:hover {
     color: #55ACEE !important;
 }
-.fa-github {
+.fa-github:hover {
     color: #FF9900 !important;
 }
-.fa-linkedin {
+.fa-linkedin:hover {
     color: #007bb5 !important;
 }
-.fa-twitter:hover,
-.fa-github:hover,
-.fa-linkedin:hover {
+.fa-twitter,
+.fa-github,
+.fa-linkedin {
     color: #305d44 !important;
 }
 @media (max-width: 991px) {
@@ -192,22 +192,33 @@ html .main-menu a:hover {
     list-style-type: none;
     padding: 0;
 }
-.social-icons li {
+.menu-social {
+    width: 100%;
+    background-color: #ecf0f1;
+    margin: 20px 0 0.7em;
+    border-top: solid #305d44 1px;
+    border-bottom: solid #305d44 1px;
+}
+.social-icons {
     display: flex;
-    justify-content: space-around;
-    width: 100px;
+    justify-content: space-between;
+    width: 200px;
     margin: auto;
-    padding: 1em 0 1.333em;
+    padding: 1em 0 0.3em;
 }
 .social-icons a {
-    font-size: 2rem !important;
-    padding: 0 10px 0.3em;
+    font-size: 2em !important;
+    padding: 0 0 0.3em;
 }
-.main-menu .nav {
+.main-menu .menu-nav {
     display: block;
     text-align: center;
     width: 200px;
     margin: auto;
+}
+.main-menu .menu-nav .nav {
+    display: block;
+    text-align: right;
 }
 .main-menu .nav li {
     text-transform: uppercase;
@@ -218,11 +229,11 @@ html .main-menu a:hover {
     font-size: 2.5em !important;
     .social-icons a {
         font-size: 3rem !important;
-        padding: 0 10px;
+        padding: 0;
     }
 }
 .main-menu .nav i {
-    padding-right: 10px;
+    padding-left: 10px;
 }
 
 /*-----------------------------*/
