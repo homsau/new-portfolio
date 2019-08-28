@@ -102,8 +102,8 @@ $(document).ready(function() {
         $(".full-size").height(pageHeight);
         carouselHeight = $("#portfolio-item .carousel-img").height();
         $(".carousel-controls span").height(carouselHeight);
-        // var testHeight = $('#portfolio-item img').height();
-        // console.log('test height bitch: ' + testHeight);
+        var testHeight = $('#portfolio-item img').height();
+        console.log('test height: ' + testHeight);
     }).resize();
 });
 
