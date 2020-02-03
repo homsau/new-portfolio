@@ -83,9 +83,10 @@ $(document).ready(function() {
 //                         VIEWS                       //
 //=====================================================//
 $(document).ready(function() {
+    $('.carousel-3d-controls').mdbCarousel3d();
+
     $(".carousel-indicators > li").click(function() {
-		var slideNum = $(this).attr("data-slide-to");
-		// console.log(slideNum);
+		var slideNum = $(this).attr("data-slide-to"); // changes active slide
 	});
 });
 $(document).ready(function() {
@@ -97,19 +98,19 @@ $(document).ready(function() {
             $(".carousel-inner .carousel-item:nth-child(" + (i + 1) + ") a .carousel-caption h3").addClass("" + i + "").text(names[i]);
         }
 	});
-	$('.carousel-item', '.show-neighbors').each(function(){
-		var next = $(this).next();
-		if (! next.length) {
-		  	next = $(this).siblings(':first');
-		}
-		next.children(':first-child').clone().addClass("clonedSlide").appendTo($(this));
-	}).each(function(){
-		var prev = $(this).prev();
-		if (! prev.length) {
-		  	prev = $(this).siblings(':last');
-		}
-		prev.children(':nth-last-child(2)').clone().addClass("clonedSlide").prependTo($(this));
-	});
+	// $('.carousel-item', '.show-neighbors').each(function(){
+	// 	var next = $(this).next();
+	// 	if (! next.length) {
+	// 	  	next = $(this).siblings(':first');
+	// 	}
+	// 	next.children(':first-child').clone().addClass("clonedSlide").appendTo($(this));
+	// }).each(function(){
+	// 	var prev = $(this).prev();
+	// 	if (! prev.length) {
+	// 	  	prev = $(this).siblings(':last');
+	// 	}
+	// 	prev.children(':nth-last-child(2)').clone().addClass("clonedSlide").prependTo($(this));
+	// });
     
     $(".switcher #grid").click(function() {
 		$(".switcher + #myItems .clonedSlide").hide();
