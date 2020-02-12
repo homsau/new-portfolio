@@ -1,0 +1,35 @@
+<div style="display: flex; height: 100%;">
+	<div class="main-info">
+		<h2 id="title" style="text-align: center;">CONTACT</h2>
+		<form id="contact-form" method="post" action="/submit" role="form">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="form_name">First and Last Name:</label>
+						<input id="form_name name" onfocus="this.value=''" type="text" name="name" class="form-control" placeholder="Your Name Here!" required="required" data-error="Name is required.">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="form_email">Email:</label>
+						<input id="form_email email" onfocus="this.value=''" type="text" name="email" class="form-control" placeholder="example@email.com" required="required" data-error="Email is required.">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="form_message">Message:</label>
+						<textarea id="form_message message" onfocus="this.value=''" name="message" placeholder="Send me a message!" class="form-control" rows="4" data-error="Send me a message!"></textarea>
+					</div>
+				</div>
+				<div class="col-md-12" style="margin-bottom:20px;">
+					<div class="g-recaptcha" data-sitekey="6Lf9nZIUAAAAANVZwNcqdN2MQs6Fn3oO4-oer23R"></div><br>
+					<input type="submit" name="submit" class="contact-submit btn btn-success btn-send" data-callback="onSubmit" value="Submit">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
