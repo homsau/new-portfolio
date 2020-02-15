@@ -67,13 +67,15 @@ html a:hover {
     margin: auto;
 }
 .portfolio .main-info {
-    margin: auto;
+    margin: auto; 
+    /* auto 55px; */
     padding: 40px 40px;
+    /* width: 500px; */
     max-width: 100%;
 }
 .contact .main-info {
     margin: auto;
-    padding: 0px;
+    padding: 40px 40px;
     width: 100%;
     max-width: 600px;
 }
@@ -291,9 +293,10 @@ html .main-menu a:hover {
     margin-top: 55px;
 }
 #myItems.carousel .carousel-indicators {
-    bottom: 0;
+    bottom: -55px;
     background: rgba(255,255,255,0.5);
-    width: 100%;
+    width: 500px;
+    max-width: 100%;
     display: inline-flex;
     margin: 0 auto !important;
     padding: 20px 0;
@@ -326,16 +329,21 @@ html .main-menu a:hover {
 }
 #myItems.carousel {
     margin: auto;
+    width: 500px;
+    max-width: 100%;
 }
 #myItems.carousel .carousel-inner > .carousel-item img {
     width: 100%;
     margin: auto;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
 #myItems.carousel .carousel-inner {
-    display: flex;
-    height: 500px;
+    /* display: flex; */
+    height: 400px;
+}
+#myItems.grid {
+    width: 100%;
 }
 #myItems.grid .carousel-item {
     display: block !important;
@@ -350,13 +358,16 @@ html .main-menu a:hover {
 }
 #myItems .carousel-inner {overflow: hidden;}
 #myItems .carousel-inner .carousel-caption {
-    position: relative;
-    /*     background-color: blue; */
-    padding: 20px 0;
+    position: absolute;
+    width:  100%;
+    padding: 10px 0 0;
     bottom: 0;
     left: auto;
     right: auto;
     color: #000;
+}
+#myItems.carousel .carousel-inner .carousel-caption {
+    background-color: rgba(255,255,255,0.75);
 }
 #myItems.grid .carousel-inner .carousel-caption {
     position: relative;
@@ -402,12 +413,15 @@ html .main-menu a:hover {
     display: flex;
 }
 #myItems, .carousel-inner {
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 #myItems.grid .controls {
     display: none;
 }
 
+/* 
+// side carousel option
 .show-neighbors {
     overflow: hidden;
 }
@@ -420,7 +434,6 @@ html .main-menu a:hover {
     background: rgba(255, 255, 255, 0.3);
     width: 25%;
     z-index: 11;
-    /* .carousel-caption has z-index 10 */
 }
 .show-neighbors .carousel-inner {
     width: 150%;
@@ -439,9 +452,9 @@ html .main-menu a:hover {
 .show-neighbors .item__third {
     float: left;
     position: relative;
-    /* captions can now be added */
     width: 33.33333333%;
 }
+*/
 
 /* portfolio modal */
 .carousel-desc {

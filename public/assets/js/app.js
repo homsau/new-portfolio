@@ -98,23 +98,24 @@ $(document).ready(function() {
             $(".carousel-inner .carousel-item:nth-child(" + (i + 1) + ") a .carousel-caption h3").addClass("" + i + "").text(names[i]);
         }
 	});
-	$('.carousel-item', '.show-neighbors').each(function(){
-		var next = $(this).next();
-		if (! next.length) {
-		  	next = $(this).siblings(':first');
-		}
-		next.children(':first-child').clone().addClass("clonedSlide").appendTo($(this));
-	}).each(function(){
-		var prev = $(this).prev();
-		if (! prev.length) {
-		  	prev = $(this).siblings(':last');
-		}
-		prev.children(':nth-last-child(2)').clone().addClass("clonedSlide").prependTo($(this));
-	});
+    // this below is for the previous and next elements to be on the side. not working
+    // $('.carousel-item', '.show-neighbors').each(function(){
+	// 	var next = $(this).next();
+	// 	if (! next.length) {
+	// 	  	next = $(this).siblings(':first');
+	// 	}
+	// 	next.children(':first-child').clone().addClass("clonedSlide").appendTo($(this));
+	// }).each(function(){
+	// 	var prev = $(this).prev();
+	// 	if (! prev.length) {
+	// 	  	prev = $(this).siblings(':last');
+	// 	}
+	// 	prev.children(':nth-last-child(2)').clone().addClass("clonedSlide").prependTo($(this));
+	// });
     
     $(".switcher #grid").click(function() {
-		$(".switcher + #myItems .clonedSlide").hide();
-		$(".switcher + #myItems").removeClass("carousel slide show-neighbors").addClass("grid").attr("data-interval", "false");
+		// $(".switcher + #myItems .clonedSlide").hide();
+		$(".switcher + #myItems").removeClass("carousel slide").addClass("grid").attr("data-interval", "false");
 		$(".switcher + #myItems .embed-responsive-item").addClass("grid-item").removeClass("carousel-item");
 		$(".switcher + #myItems .carousel-inner").removeClass("embed-responsive embed-responsive-16by9");
 		$(".carousel-control-prev").css("display","none");
@@ -122,8 +123,8 @@ $(document).ready(function() {
 		$(".carousel-indicators").css("display","none");
     });
     $(".switcher #carousel").click(function() {
-		$(".switcher + #myItems .clonedSlide").show();
-		$(".switcher + #myItems").removeClass("grid").addClass("carousel slide show-neighbors").attr("data-interval", "7000");
+		// $(".switcher + #myItems .clonedSlide").show();
+		$(".switcher + #myItems").removeClass("grid").addClass("carousel slide").attr("data-interval", "7000");
 		$(".switcher + #myItems .embed-responsive-item").addClass("carousel-item").removeClass("grid-item");
 		$(".switcher + #myItems .carousel-inner").addClass("embed-responsive embed-responsive-16by9");
         $(".portfolio-item").each(function() {
@@ -140,21 +141,21 @@ $(document).ready(function() {
 
 
 /* change carousel item with arrow keys */
-/* close any open modals */
-// $(document).keydown(function(e) {
-//     if (e.keyCode === 37) {
-//        // Previous
-//        $(".carousel-control-prev").click();
-//        $(".modal").modal("hide");
-//        return false;
-//     }
-//     if (e.keyCode === 39) {
-//        // Next
-//        $(".carousel-control-next").click();
-//        $(".modal").modal("hide");
-//        return false;
-//     }
-// });
+/* close any open modals on left/right arrow click */
+$(document).keydown(function(e) {
+    if (e.keyCode === 37 || e.keyCode === 40) {
+       // Previous
+       $(".carousel-control-prev").click();
+       $(".modal").modal("hide");
+       return false;
+    }
+    if (e.keyCode === 38 || e.keyCode === 39) {
+       // Next
+       $(".carousel-control-next").click();
+       $(".modal").modal("hide");
+       return false;
+    }
+});
 
 //=====================================================//
 //                      RECAPTCHA                      //

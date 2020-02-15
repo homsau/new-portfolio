@@ -1,4 +1,5 @@
-<div style="display: flex; height: 100%;">
+{{!-- <div style="display: flex; height: 100%;"> --}}
+<div>
 	<div class="main-info">
 		<h2 id="title" style="text-align: center;">PORTFOLIO</h2>
 		<div class="switcher">
@@ -6,16 +7,7 @@
 			<a id="grid" href="#"><img src="/assets/img/grid-icon.png" alt="grid-icon"></a>
 		</div>
 
-		<div id="myItems" class="carousel slide show-neighbors" data-ride="carousel" data-interval="700000" data-keyboard="true" data-pause="hover">
-		
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#myItems" data-slide-to="0" class="active"></li>
-				<li data-target="#myItems" data-slide-to="1"></li>
-				<li data-target="#myItems" data-slide-to="2"></li>
-				<li data-target="#myItems" data-slide-to="3"></li>
-				<li data-target="#myItems" data-slide-to="4"></li>
-			</ol>
+		<div id="myItems" class="carousel slide" data-ride="carousel" data-interval="700000" data-keyboard="true" data-pause="hover">
 		
 			<!-- The slideshow -->
 			<div class="carousel-inner embed-responsive embed-responsive-16by9" role="listbox">
@@ -79,6 +71,15 @@
 				<span class="carousel-control-next-icon" aria-hidden="true"></span>
 				<span class="sr-only">Next</span>
 			</a>
+
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myItems" data-slide-to="0" class="active"></li>
+				<li data-target="#myItems" data-slide-to="1"></li>
+				<li data-target="#myItems" data-slide-to="2"></li>
+				<li data-target="#myItems" data-slide-to="3"></li>
+				<li data-target="#myItems" data-slide-to="4"></li>
+			</ol>
 		</div>
 	</div>
 
