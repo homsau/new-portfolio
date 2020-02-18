@@ -36,8 +36,8 @@ $(document).ready(function() {
     });
     $(document).ready(function() {
         // if($(window).width() > 991) {
-            $('.mobile > .main-menu > .nav > li > a').click(function() {
-                $(".mobile.navigation").animate({width: "toggle"}, {duration: 500}).removeClass("open");
+            $(".mobile > .main-menu > .menu-nav > .nav > li > a").click(function() {
+                $(".navigation").animate({width: "toggle"}, {duration: 500}).removeClass("open");
             });
         // }
     });

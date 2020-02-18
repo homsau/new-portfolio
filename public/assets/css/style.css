@@ -159,6 +159,16 @@ html a:hover {
         cursor: pointer;
         outline: none !important;
     }
+    .switcher img {
+        height: 60px !important;
+    }
+    .main-menu .nav li {
+        width: 400px !important;
+    }
+    .main-menu a {
+        font-size: 2.25rem !important;
+        line-height: 1.5 !important;
+    }
 }
 @media (max-width: 767px) {
     .main-info h2 {
@@ -246,8 +256,8 @@ html .main-menu a:hover {
 /*----------PORTFOLIO----------*/
 /*-----------------------------*/
 .switcher {
-    padding: 20px 0 0;
-    text-align: right;
+    padding: 20px 0;
+    text-align: center;
 }
 .switcher img {
     height: 40px;
