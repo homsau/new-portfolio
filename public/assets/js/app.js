@@ -164,7 +164,7 @@ $(document).ready(function() {
                     $(".nav a").removeAttr("class");
                     $(".pages").slideUp(500);
                     $(".thank-you").slideDown(500);
-                    console.log('app.js');
+                    console.log('contact submission sent');
                 }
             }
         });
