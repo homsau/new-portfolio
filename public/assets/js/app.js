@@ -18,13 +18,6 @@ $(document).ready(function() {
         }
     }).resize();
 
-    // $(".pages").click(function() {
-    //     if($(".navigation").hasClass("open")) {
-    //         $(".navigation").animate({display: "toggle"}, {duration: 500});
-    //         $(".navigation").removeClass("open");
-    //     }
-    // });
-
     $(".navigation").click(function(event){
           event.stopPropagation();
     });
@@ -44,6 +37,16 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
+    // TEST PAGE MENU ITEM
+    // $("#test").click(function() {
+    //     if (!$(this).hasClass("active")) {
+    //         $(".nav a").removeAttr("class");
+    //         $("#test").addClass("active");
+    //         $(".pages").slideUp(500);
+    //         $(".test").slideDown(500);
+    //     }
+    // });
+    
     $("#home").click(function() {
         if (!$(this).hasClass("active")) {
             $(".nav a").removeAttr("class");
@@ -98,20 +101,6 @@ $(document).ready(function() {
             $(".carousel-inner .carousel-item:nth-child(" + (i + 1) + ") a .carousel-caption h3").addClass("" + i + "").text(names[i]);
         }
 	});
-    // this below is for the previous and next elements to be on the side. not working
-    // $('.carousel-item', '.show-neighbors').each(function(){
-	// 	var next = $(this).next();
-	// 	if (! next.length) {
-	// 	  	next = $(this).siblings(':first');
-	// 	}
-	// 	next.children(':first-child').clone().addClass("clonedSlide").appendTo($(this));
-	// }).each(function(){
-	// 	var prev = $(this).prev();
-	// 	if (! prev.length) {
-	// 	  	prev = $(this).siblings(':last');
-	// 	}
-	// 	prev.children(':nth-last-child(2)').clone().addClass("clonedSlide").prependTo($(this));
-	// });
     
     $(".switcher #grid").click(function() {
 		// $(".switcher + #myItems .clonedSlide").hide();
@@ -138,7 +127,6 @@ $(document).ready(function() {
 		$(".carousel-indicators").css("display","inline-flex");
     });
 });
-
 
 /* change carousel item with arrow keys */
 /* close any open modals on left/right arrow click */
