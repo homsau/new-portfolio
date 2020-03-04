@@ -1,3 +1,6 @@
+
+var favicon = require('serve-favicon');
+app.use(favicon(__dirname + 'portfolio-favicon.ico'));
 //=====================================================//
 //                        NAVBAR                       //
 //=====================================================//
