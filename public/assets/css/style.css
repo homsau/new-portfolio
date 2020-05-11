@@ -86,7 +86,6 @@ html a:hover {
 /*-----------------------------*/
 /*----------MAIN MENU----------*/
 /*-----------------------------*/
-/* .pages:not(.test) { */
 .pages:not(.home) {
     display: none;
 }
@@ -431,9 +430,41 @@ html .main-menu a:hover {
     display: none;
 }
 
-/* .glider-contain a {
-    display: block;
-} */
+/* 
+// side carousel option
+.show-neighbors {
+    overflow: hidden;
+}
+.show-neighbors .carousel-indicators {
+    margin-right: 25%;
+    margin-left: 25%;
+}
+.show-neighbors .carousel-control-prev,
+.show-neighbors .carousel-control-next {
+    background: rgba(255, 255, 255, 0.3);
+    width: 25%;
+    z-index: 11;
+}
+.show-neighbors .carousel-inner {
+    width: 150%;
+    left: -25%;
+}
+.show-neighbors .carousel-item-next:not(.carousel-item-left),
+.show-neighbors .carousel-item-right.active {
+    -webkit-transform: translate3d(33%, 0, 0);
+    transform: translate3d(33%, 0, 0);
+}
+.show-neighbors .carousel-item-prev:not(.carousel-item-right),
+.show-neighbors .carousel-item-left.active {
+    -webkit-transform: translate3d(-33%, 0, 0);
+    transform: translate3d(-33%, 0, 0);
+}
+.show-neighbors .item__third {
+    float: left;
+    position: relative;
+    width: 33.33333333%;
+}
+*/
 
 /* portfolio modal */
 .carousel-desc {
@@ -564,13 +595,4 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active  {
     box-shadow: 0 0 0 30px #abd4bd inset !important;
     -webkit-box-shadow: 0 0 0 30px #abd4bd inset !important;
-}
-
-
-@media (min-width: 992px) {
-    .col-lg-9 {
-        -ms-flex: 0 0 76% !important;
-        flex: 0 0 76% !important;
-        max-width: 76% !important;
-    }
 }

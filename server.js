@@ -44,7 +44,7 @@ app.post('/submit',function(req,res,e) {
       body = JSON.parse(body);
       // Success will be true or false depending upon captcha validation.
       if(body.success !== undefined && !body.success) {
-        console.log("recaptcha line 47");
+        console.log("second nah");
       } else {
         var transporter = nodemailer.createTransport({
           service: 'Gmail',
@@ -57,7 +57,7 @@ app.post('/submit',function(req,res,e) {
           }
         });
         var mailOptions = {
-          from: '"Portfolio Contact 🤘🏻🔥" <jcowart.web@gmail.com>',
+          from: '"Portfolio Contact 🤘🏻🔥" <james.cowart.portfolio@gmail.com>',
           to: 'james.p.cowart@gmail.com',
           subject: 'Contact Me',
           html: req.body.name + ' is trying to reach you!' + '</br>' +
@@ -68,10 +68,10 @@ app.post('/submit',function(req,res,e) {
         transporter.sendMail(mailOptions, function(error, info) {
           if(error){
             console.log(error);
-            // console.log('fail 71');
+            console.log('oops');
           } else {
             console.log(info.response);
-            // console.log('sent 74');
+            console.log('hooray');
             
             res.redirect('/');
           }
