@@ -1,0 +1,88 @@
+{{!-- <div style="display: flex; height: 100%;"> --}}
+<div class="top-container">
+	<div class="main-info">
+		<h2 id="title" style="text-align: center;">PORTFOLIO</h2>
+		<div class="switcher">
+			<a id="carousel" href="#"><img src="/assets/img/carousel-icon.png" alt="carousel-icon"></a>
+			<a id="grid" href="#"><img src="/assets/img/grid-icon.png" alt="grid-icon"></a>
+		</div>
+
+		<div id="myItems" class="carousel slide" data-ride="carousel" data-interval="700000" data-keyboard="true" data-pause="hover">
+		
+			<!-- The slideshow -->
+			<div class="carousel-inner embed-responsive embed-responsive-16by9" role="listbox">
+				<div class="carousel-item embed-responsive-item active">
+					<div class="item__third">
+						<a href="#" data-toggle="modal" data-target="#modal-artsnow"><img src="/assets/img/portfolio-artsnow.jpg" alt="ArtsNow" class="itemImg">
+						<div class="carousel-caption">
+							<h3>ArtsNow Learning</h3>
+						</div>
+						</a>
+					</div>
+				</div>
+
+				<div class="carousel-item embed-responsive-item">
+					<div class="item__third">
+						<a href="#" data-toggle="modal" data-target="#modal-innovation"><img src="/assets/img/portfolio-innovation.jpg" alt="Innovation Compounding" class="itemImg">
+						<div class="carousel-caption">
+							<h3>Innovation Compounding</h3>
+						</div>
+						</a>
+					</div>
+				</div>
+				
+				<div class="carousel-item embed-responsive-item">
+					<div class="item__third">
+						<a href="#" data-toggle="modal" data-target="#modal-brewhound"><img src="/assets/img/project3-Brewhound.jpg" alt="Brewhound" class="itemImg">
+						<div class="carousel-caption">
+							<h3>Brewhound</h3>
+						</div>
+						</a>
+					</div>
+				</div>
+
+				<div class="carousel-item embed-responsive-item">
+					<div class="item__third">
+						<a href="#" data-toggle="modal" data-target="#modal-playlisted"><img src="/assets/img/project2-Playlisted.jpg" alt="Playlisted" class="itemImg">
+						<div class="carousel-caption">
+							<h3>Playlisted</h3>
+						</div>
+						</a>
+					</div>
+				</div>
+
+				<div class="carousel-item embed-responsive-item">
+					<div class="item__third">
+						<a href="#" data-toggle="modal" data-target="#modal-state-of-the-world"><img src="/assets/img/project1-State-of-the-World.jpg" alt="State of the World" class="itemImg">
+						<div class="carousel-caption">
+							<h3>State of the World</h3>
+						</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Left and right controls -->
+			<a class="carousel-control-prev" href="#myItems" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#myItems" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myItems" data-slide-to="0" class="active"></li>
+				<li data-target="#myItems" data-slide-to="1"></li>
+				<li data-target="#myItems" data-slide-to="2"></li>
+				<li data-target="#myItems" data-slide-to="3"></li>
+				<li data-target="#myItems" data-slide-to="4"></li>
+			</ol>
+		</div>
+	</div>
+
+	<!-- Modals -->
+	{{> modals}}
+</div>
