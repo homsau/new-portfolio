@@ -68,7 +68,7 @@ app.post('/submit',function(req,res,e) {
         transporter.sendMail(mailOptions, function(error, info) {
           if(error){
             console.log(error);
-            console.log('oops');
+            console.log('email error');
           } else {
             console.log(info.response);
             console.log('hooray');
