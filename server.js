@@ -33,53 +33,53 @@ var routes = require("./controllers/app_controller.js");
 
 app.use("/", routes);
 
-app.post('/submit',function(req,res,e) {
-  if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
-    console.log("Beep Boop: You are a robot");
-    return;
-  } else {
-    var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
-    // Hitting GET request to the URL, Google will respond with success or error scenario.
-    request(verificationUrl,function(error,response,body) {
-      body = JSON.parse(body);
-      // Success will be true or false depending upon captcha validation.
-      if(body.success !== undefined && !body.success) {
-        console.log("second nah");
-      } else {
-        var transporter = nodemailer.createTransport({
-          service: 'Gmail',
-          auth: {
-            user: username,
-            pass: password
-          },
-          tls: {
-            rejectUnauthorized: false
-          }
-        });
-        var mailOptions = {
-          from: '"Portfolio Contact 🤘🏻🔥" <james.cowart.portfolio@gmail.com>',
-          to: 'james.p.cowart@gmail.com',
-          subject: 'Contact Me',
-          html: req.body.name + ' is trying to reach you!' + '</br>' +
-            'Name: ' + req.body.name + '</br>' +
-            'Email: ' + req.body.email + '</br>' +
-            'Message: ' + req.body.message
-        };
-        transporter.sendMail(mailOptions, function(error, info) {
-          if(error){
-            console.log(error);
-            console.log('email error');
-          } else {
-            console.log(info.response);
-            console.log('hooray');
+// app.post('/submit',function(req,res,e) {
+//   if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
+//     console.log("Beep Boop: You are a robot");
+//     return;
+//   } else {
+//     var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+//     // Hitting GET request to the URL, Google will respond with success or error scenario.
+//     request(verificationUrl,function(error,response,body) {
+//       body = JSON.parse(body);
+//       // Success will be true or false depending upon captcha validation.
+//       if(body.success !== undefined && !body.success) {
+//         console.log("second nah");
+//       } else {
+//         var transporter = nodemailer.createTransport({
+//           service: 'Gmail',
+//           auth: {
+//             user: username,
+//             pass: password
+//           },
+//           tls: {
+//             rejectUnauthorized: false
+//           }
+//         });
+//         var mailOptions = {
+//           from: '"Portfolio Contact 🤘🏻🔥" <james.cowart.portfolio@gmail.com>',
+//           to: 'james.p.cowart@gmail.com',
+//           subject: 'Contact Me',
+//           html: req.body.name + ' is trying to reach you!' + '</br>' +
+//             'Name: ' + req.body.name + '</br>' +
+//             'Email: ' + req.body.email + '</br>' +
+//             'Message: ' + req.body.message
+//         };
+//         transporter.sendMail(mailOptions, function(error, info) {
+//           if(error){
+//             console.log(error);
+//             console.log('email error');
+//           } else {
+//             console.log(info.response);
+//             console.log('hooray');
             
-            res.redirect('/');
-          }
-        })
-      }
-    });
-  }
-});
+//             res.redirect('/');
+//           }
+//         })
+//       }
+//     });
+//   }
+// });
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
