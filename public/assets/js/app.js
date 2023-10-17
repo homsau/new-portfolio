@@ -71,16 +71,16 @@ $(document).ready(function() {
             $(".portfolio").slideDown(500);
         }
     });
-    $("#contact").click(function() {
-        if (!$(this).hasClass("active")) {
-            $(".nav a").removeAttr("class");
-            $("#contact").addClass("active");
-            $(".pages").slideUp(500);
-            $(".contact").slideDown(500);
-            $("#contact-form input:not('.contact-submit')").val("");
-            $("#contact-form textarea").val("");
-        }
-    });
+    // $("#contact").click(function() {
+    //     if (!$(this).hasClass("active")) {
+    //         $(".nav a").removeAttr("class");
+    //         $("#contact").addClass("active");
+    //         $(".pages").slideUp(500);
+    //         $(".contact").slideDown(500);
+    //         $("#contact-form input:not('.contact-submit')").val("");
+    //         $("#contact-form textarea").val("");
+    //     }
+    // });
 });
 
 //=====================================================//
