@@ -214,7 +214,7 @@ html .main-menu a:hover {
 }
 .social-icons {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 200px;
     margin: auto;
     padding: 1em 0 0.3em;
