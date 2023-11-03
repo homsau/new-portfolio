@@ -41,7 +41,8 @@ html a:hover {
     padding-left: 0; */
 }
 .main-info #bio p {
-    padding: 0 0 0 40px;
+    /* padding: 0 0 0 40px; */
+    padding: 0 40px;
 }
 .main-info #bio p:first-child {
     /* margin-bottom: 10px; */
@@ -92,16 +93,17 @@ html a:hover {
 }
 .hamburger {
     display: none;
+    position: fixed;
     z-index: 16;
     text-shadow: 1.5px 1.5px 2px #fff;
 }
 .navigation {
     position: fixed !important;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     top: 0 !important;
     right: 0 !important;
     background-color: rgba(255,255,255,1) !important;
-    width: 350px !important;
+    /* width: 350px !important; */
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     z-index: 15;
 }
